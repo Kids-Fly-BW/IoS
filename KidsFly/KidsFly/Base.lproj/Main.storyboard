@@ -22,6 +22,9 @@
                                     <segment title="Sign Up"/>
                                     <segment title="Sign In"/>
                                 </segments>
+                                <connections>
+                                    <action selector="signInTypeChanged:" destination="DBp-hf-fz9" eventType="valueChanged" id="dCR-6Z-vsk"/>
+                                </connections>
                             </segmentedControl>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heB-sO-6yR">
                                 <rect key="frame" x="38" y="268" width="339" height="34"/>
@@ -37,6 +40,9 @@
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="signInButtonTapped:" destination="DBp-hf-fz9" eventType="touchUpInside" id="mvl-Od-0FD"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fly easy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvd-Od-LJp">
                                 <rect key="frame" x="107" y="836" width="201" height="17"/>
@@ -69,6 +75,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="egb-KF-FFf"/>
                     </view>
+                    <connections>
+                        <outlet property="loginTypeSegmentedControl" destination="d8d-Ya-MxX" id="zNr-u5-UYP"/>
+                        <outlet property="passwordTextField" destination="heB-sO-6yR" id="woc-v8-urn"/>
+                        <outlet property="signInButton" destination="Xo3-OF-gyR" id="uiM-G3-yff"/>
+                        <outlet property="usernameTextField" destination="YVC-gz-khO" id="PGU-mm-rGb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRO-J7-YAG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
