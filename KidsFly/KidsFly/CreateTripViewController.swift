@@ -10,6 +10,10 @@ import UIKit
 
 class CreateTripViewController: UIViewController {
 
+    
+    //MARK: Properties
+    
+    
     //MARK: Outlets
     
     @IBOutlet weak var airlineTextField: UITextField!
