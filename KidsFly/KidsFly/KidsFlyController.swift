@@ -24,7 +24,7 @@ enum NetworkError: Error {
 
 class KidsFlyController {
     
-    private let baseUrl = URL(//api they are coming up with)!
+   private let baseUrl = URL()! //api they are coming up with
 
      func signUp(with user: User, completion: @escaping (Error?) -> ()) {
             let signUpUrl = baseUrl.appendingPathComponent("users/signup")

@@ -15,9 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d8d-Ya-MxX">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="d8d-Ya-MxX">
                                 <rect key="frame" x="73" y="160" width="269" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="Sign Up"/>
                                     <segment title="Sign In"/>
@@ -26,34 +25,35 @@
                                     <action selector="signInTypeChanged:" destination="DBp-hf-fz9" eventType="valueChanged" id="dCR-6Z-vsk"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heB-sO-6yR">
-                                <rect key="frame" x="38" y="268" width="339" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="heB-sO-6yR">
+                                <rect key="frame" x="20" y="268" width="374" height="34"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xo3-OF-gyR">
-                                <rect key="frame" x="118" y="327" width="179" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xo3-OF-gyR">
+                                <rect key="frame" x="117" y="328" width="180" height="29"/>
                                 <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius ">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="signInButtonTapped:" destination="DBp-hf-fz9" eventType="touchUpInside" id="mvl-Od-0FD"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fly easy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvd-Od-LJp">
-                                <rect key="frame" x="107" y="836" width="201" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fly easy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvd-Od-LJp">
+                                <rect key="frame" x="110" y="836" width="194" height="17"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="KidsFly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhY-kf-r9s">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="KidsFly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IhY-kf-r9s">
                                 <rect key="frame" x="157" y="77" width="100" height="63"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -65,14 +65,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YVC-gz-khO">
-                                <rect key="frame" x="38" y="218" width="339" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YVC-gz-khO">
+                                <rect key="frame" x="20" y="219" width="374" height="34"/>
                                 <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="egb-KF-FFf" firstAttribute="trailing" secondItem="Rvd-Od-LJp" secondAttribute="trailing" constant="110" id="7ja-YU-fk7"/>
+                            <constraint firstItem="Rvd-Od-LJp" firstAttribute="leading" secondItem="egb-KF-FFf" secondAttribute="leading" constant="110" id="AEt-h5-Asz"/>
+                            <constraint firstItem="Xo3-OF-gyR" firstAttribute="leading" secondItem="egb-KF-FFf" secondAttribute="leading" constant="117" id="AVk-CD-UaN"/>
+                            <constraint firstItem="heB-sO-6yR" firstAttribute="top" secondItem="YVC-gz-khO" secondAttribute="bottom" constant="15" id="KBq-vx-wyD"/>
+                            <constraint firstItem="egb-KF-FFf" firstAttribute="trailing" secondItem="IhY-kf-r9s" secondAttribute="trailing" constant="157" id="Nh9-iD-aoz"/>
+                            <constraint firstItem="d8d-Ya-MxX" firstAttribute="top" secondItem="IhY-kf-r9s" secondAttribute="bottom" constant="20" id="QV1-1Y-cXd"/>
+                            <constraint firstItem="Rvd-Od-LJp" firstAttribute="top" secondItem="Xo3-OF-gyR" secondAttribute="bottom" constant="479" id="Why-bh-nok"/>
+                            <constraint firstItem="egb-KF-FFf" firstAttribute="trailing" secondItem="heB-sO-6yR" secondAttribute="trailing" constant="20" id="fXw-jU-zqa"/>
+                            <constraint firstItem="YVC-gz-khO" firstAttribute="leading" secondItem="egb-KF-FFf" secondAttribute="leading" constant="20" id="fZ4-mh-N2C"/>
+                            <constraint firstItem="heB-sO-6yR" firstAttribute="top" secondItem="YVC-gz-khO" secondAttribute="bottom" constant="15" id="hKX-yJ-wVP"/>
+                            <constraint firstItem="heB-sO-6yR" firstAttribute="leading" secondItem="egb-KF-FFf" secondAttribute="leading" constant="20" id="nZ4-jI-cJ9"/>
+                            <constraint firstItem="egb-KF-FFf" firstAttribute="bottom" secondItem="Rvd-Od-LJp" secondAttribute="bottom" constant="9" id="rNU-bj-Y3g"/>
+                            <constraint firstItem="IhY-kf-r9s" firstAttribute="top" secondItem="egb-KF-FFf" secondAttribute="top" constant="33" id="rNa-87-hel"/>
+                            <constraint firstItem="IhY-kf-r9s" firstAttribute="leading" secondItem="egb-KF-FFf" secondAttribute="leading" constant="157" id="rpu-hk-bWq"/>
+                            <constraint firstItem="Xo3-OF-gyR" firstAttribute="top" secondItem="heB-sO-6yR" secondAttribute="bottom" constant="26" id="rz9-e4-YJN"/>
+                            <constraint firstItem="egb-KF-FFf" firstAttribute="trailing" secondItem="Xo3-OF-gyR" secondAttribute="trailing" constant="117" id="sQp-G8-Jv7"/>
+                            <constraint firstItem="egb-KF-FFf" firstAttribute="trailing" secondItem="YVC-gz-khO" secondAttribute="trailing" constant="20" id="zSa-U2-ewp"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="egb-KF-FFf"/>
                     </view>
                     <connections>
