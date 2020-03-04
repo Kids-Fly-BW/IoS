@@ -166,6 +166,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="SATapped:" destination="opv-IS-W98" eventType="touchUpInside" id="fld-ri-o09"/>
                                     <action selector="signInButtonTapped:" destination="xDE-wI-PVa" eventType="touchUpInside" id="bIG-qP-x3Q"/>
                                 </connections>
                             </button>
@@ -274,6 +275,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="EmailTextfield" destination="npt-aB-Awl" id="7fH-2C-CjE"/>
+                        <outlet property="FNTextfield" destination="Jr4-Ch-rB7" id="UvN-YV-phG"/>
+                        <outlet property="LNTextfield" destination="1RI-1v-0ax" id="cxN-DO-Qdw"/>
+                        <outlet property="PNTextfield" destination="N0x-ki-0WM" id="2Oa-ja-v6C"/>
+                        <outlet property="SSNTextfield" destination="Yj9-7d-XwD" id="nuX-OY-onP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvp-b4-ZhT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

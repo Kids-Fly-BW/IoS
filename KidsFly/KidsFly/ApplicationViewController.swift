@@ -16,7 +16,14 @@ class ApplicationViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    //MARK: Outlets
+    
+    @IBOutlet weak var FNTextfield: UITextField!
+    @IBOutlet weak var LNTextfield: UITextField!
+    @IBOutlet weak var EmailTextfield: UITextField!
+    @IBOutlet weak var PNTextfield: UITextField!
+    @IBOutlet weak var SSNTextfield: UITextField!
+    
     /*
     // MARK: - Navigation
 
@@ -26,5 +33,8 @@ class ApplicationViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    //MARK: Actions
+    @IBAction func SATapped(_ sender: Any) {
+    }
 }
