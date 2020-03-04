@@ -105,16 +105,16 @@
             </objects>
             <point key="canvasLocation" x="3429" y="441"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Trip Table View Controller-->
         <scene sceneID="0Ag-uK-Igx">
             <objects>
-                <tableViewController id="p4N-Kd-LLI" sceneMemberID="viewController">
+                <tableViewController id="p4N-Kd-LLI" customClass="TripTableViewController" customModule="KidsFly" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7th-dI-YBU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="71" id="JMR-Lg-t6g">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TripCell" rowHeight="71" id="JMR-Lg-t6g" customClass="TripTableViewCell" customModule="KidsFly" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JMR-Lg-t6g" id="PJd-ae-xm7">
@@ -151,6 +151,13 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="airlineLabel" destination="eMl-jI-ikg" id="S3b-f5-Jne"/>
+                                    <outlet property="airportLabel" destination="FWZ-m0-Sqn" id="Fbg-f0-cCP"/>
+                                    <outlet property="flightLabel" destination="kCi-WT-zbP" id="kdY-Q9-gqh"/>
+                                    <outlet property="kidsLabel" destination="Id9-bb-gwc" id="X81-MS-DwO"/>
+                                    <segue destination="05d-Vi-tne" kind="show" identifier="TripDetailSegue" id="uOH-Uj-xXQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -162,12 +169,12 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ApT-WD-qdg">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="05d-Vi-tne" kind="show" id="bRm-pL-6au"/>
+                                <segue destination="05d-Vi-tne" kind="show" identifier="NewTripSegue" id="bRm-pL-6au"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="xDE-wI-PVa" kind="presentation" modalPresentationStyle="fullScreen" id="CDh-he-HJV"/>
+                        <segue destination="xDE-wI-PVa" kind="presentation" identifier="SignInSegue" modalPresentationStyle="fullScreen" id="CDh-he-HJV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTi-wd-wYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -291,4 +298,7 @@
             <point key="canvasLocation" x="1666.6666666666667" y="9.375"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="uOH-Uj-xXQ"/>
+    </inferredMetricsTieBreakers>
 </document>

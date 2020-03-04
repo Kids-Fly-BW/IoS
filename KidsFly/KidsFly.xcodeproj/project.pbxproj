@@ -13,6 +13,13 @@
 		5544D94D240D859E004EC0BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5544D94B240D859E004EC0BE /* LaunchScreen.storyboard */; };
 		5544D955240DAACF004EC0BE /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544D954240DAACF004EC0BE /* CreateTripViewController.swift */; };
 		5544D957240ED3E9004EC0BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5544D956240ED3E8004EC0BE /* Main.storyboard */; };
+		5544D95A241014FA004EC0BE /* KidsFly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5544D958241014FA004EC0BE /* KidsFly.xcdatamodeld */; };
+		5544D95D2410153F004EC0BE /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544D95C2410153F004EC0BE /* CoreDataStack.swift */; };
+		5544D96024102601004EC0BE /* ModelRepresentations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544D95F24102601004EC0BE /* ModelRepresentations.swift */; };
+		5544D9622410269F004EC0BE /* TripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544D9612410269F004EC0BE /* TripTableViewController.swift */; };
+		5544D96524102757004EC0BE /* TripTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544D96424102757004EC0BE /* TripTableViewCell.swift */; };
+		5544D96724102957004EC0BE /* Trip+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544D96624102957004EC0BE /* Trip+Convenience.swift */; };
+		5544D96924103E68004EC0BE /* TripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544D96824103E68004EC0BE /* TripController.swift */; };
 		B57F6EED240D8BCD00B370A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F6EEC240D8BCD00B370A9 /* LoginViewController.swift */; };
 		B57F6EEF240D94B200B370A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F6EEE240D94B200B370A9 /* User.swift */; };
 		B57F6EF1240D967E00B370A9 /* KidsFlyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F6EF0240D967E00B370A9 /* KidsFlyController.swift */; };
@@ -28,6 +35,13 @@
 		5544D94E240D859E004EC0BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5544D954240DAACF004EC0BE /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
 		5544D956240ED3E8004EC0BE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5544D959241014FA004EC0BE /* KidsFly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KidsFly.xcdatamodel; sourceTree = "<group>"; };
+		5544D95C2410153F004EC0BE /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		5544D95F24102601004EC0BE /* ModelRepresentations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRepresentations.swift; sourceTree = "<group>"; };
+		5544D9612410269F004EC0BE /* TripTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewController.swift; sourceTree = "<group>"; };
+		5544D96424102757004EC0BE /* TripTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripTableViewCell.swift; sourceTree = "<group>"; };
+		5544D96624102957004EC0BE /* Trip+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Trip+Convenience.swift"; path = "KidsFly/View Controllers/Trip+Convenience.swift"; sourceTree = SOURCE_ROOT; };
+		5544D96824103E68004EC0BE /* TripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripController.swift; sourceTree = "<group>"; };
 		B57F6EEC240D8BCD00B370A9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B57F6EEE240D94B200B370A9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B57F6EF0240D967E00B370A9 /* KidsFlyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsFlyController.swift; sourceTree = "<group>"; };
@@ -64,25 +78,56 @@
 		5544D93F240D8595004EC0BE /* KidsFly */ = {
 			isa = PBXGroup;
 			children = (
+				5544D963241026DC004EC0BE /* Model Controllers */,
 				B57F6EF4240D977A00B370A9 /* Models */,
-				5544D940240D8596004EC0BE /* AppDelegate.swift */,
-				5544D956240ED3E8004EC0BE /* Main.storyboard */,
-				5544D954240DAACF004EC0BE /* CreateTripViewController.swift */,
-				B57F6EEC240D8BCD00B370A9 /* LoginViewController.swift */,
 				5544D949240D859E004EC0BE /* Assets.xcassets */,
-				5544D94B240D859E004EC0BE /* LaunchScreen.storyboard */,
+				5544D940240D8596004EC0BE /* AppDelegate.swift */,
+				5544D95E241024DF004EC0BE /* Storyboards */,
 				5544D942240D8596004EC0BE /* SceneDelegate.swift */,
 				5544D94E240D859E004EC0BE /* Info.plist */,
+				5544D95B24101501004EC0BE /* View Controllers */,
 			);
 			path = KidsFly;
+			sourceTree = "<group>";
+		};
+		5544D95B24101501004EC0BE /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B57F6EEC240D8BCD00B370A9 /* LoginViewController.swift */,
+				5544D954240DAACF004EC0BE /* CreateTripViewController.swift */,
+				5544D9612410269F004EC0BE /* TripTableViewController.swift */,
+				5544D96424102757004EC0BE /* TripTableViewCell.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5544D95E241024DF004EC0BE /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5544D956240ED3E8004EC0BE /* Main.storyboard */,
+				5544D94B240D859E004EC0BE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5544D963241026DC004EC0BE /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5544D96824103E68004EC0BE /* TripController.swift */,
+			);
+			path = "Model Controllers";
 			sourceTree = "<group>";
 		};
 		B57F6EF4240D977A00B370A9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5544D96624102957004EC0BE /* Trip+Convenience.swift */,
 				B57F6EF0240D967E00B370A9 /* KidsFlyController.swift */,
 				B57F6EF2240D976E00B370A9 /* Bearer.swift */,
+				5544D95F24102601004EC0BE /* ModelRepresentations.swift */,
 				B57F6EEE240D94B200B370A9 /* User.swift */,
+				5544D958241014FA004EC0BE /* KidsFly.xcdatamodeld */,
+				5544D95C2410153F004EC0BE /* CoreDataStack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -158,12 +203,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5544D96524102757004EC0BE /* TripTableViewCell.swift in Sources */,
 				B57F6EF1240D967E00B370A9 /* KidsFlyController.swift in Sources */,
+				5544D9622410269F004EC0BE /* TripTableViewController.swift in Sources */,
 				B57F6EEF240D94B200B370A9 /* User.swift in Sources */,
+				5544D96724102957004EC0BE /* Trip+Convenience.swift in Sources */,
+				5544D95A241014FA004EC0BE /* KidsFly.xcdatamodeld in Sources */,
+				5544D95D2410153F004EC0BE /* CoreDataStack.swift in Sources */,
+				5544D96024102601004EC0BE /* ModelRepresentations.swift in Sources */,
 				B57F6EF3240D976E00B370A9 /* Bearer.swift in Sources */,
 				B57F6EED240D8BCD00B370A9 /* LoginViewController.swift in Sources */,
 				5544D941240D8596004EC0BE /* AppDelegate.swift in Sources */,
 				5544D943240D8596004EC0BE /* SceneDelegate.swift in Sources */,
+				5544D96924103E68004EC0BE /* TripController.swift in Sources */,
 				5544D955240DAACF004EC0BE /* CreateTripViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +404,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5544D958241014FA004EC0BE /* KidsFly.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5544D959241014FA004EC0BE /* KidsFly.xcdatamodel */,
+			);
+			currentVersion = 5544D959241014FA004EC0BE /* KidsFly.xcdatamodel */;
+			path = KidsFly.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5544D935240D8595004EC0BE /* Project object */;
 }

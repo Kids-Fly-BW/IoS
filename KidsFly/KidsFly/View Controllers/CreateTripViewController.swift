@@ -12,7 +12,13 @@ class CreateTripViewController: UIViewController {
 
     
     //MARK: Properties
-    
+    var bearer: Bearer?
+    var tripController: TripController?
+    var trip: Trip? {
+        didSet {
+            updateViews()
+        }
+    }
     
     //MARK: Outlets
     
@@ -46,5 +52,9 @@ class CreateTripViewController: UIViewController {
     //MARK: Actions
     
     @IBAction func saveTripTapped(_ sender: UIButton) {
+        
+        guard let tripController = tripController,
+            let bearer = bearer else { return }
+         
     }
 }

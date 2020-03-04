@@ -12,10 +12,11 @@ enum LoginType {
     case signUp
     case signIn
 }
-/*
+
 class LoginViewController: UIViewController {
 
       var kidsFlyController: KidsFlyController!
+      var tripController = TripController()
       var loginType = LoginType.signUp
     
      @IBOutlet weak var usernameTextField: UITextField!
@@ -77,4 +78,4 @@ class LoginViewController: UIViewController {
         }
     }
 }
-*/
+
