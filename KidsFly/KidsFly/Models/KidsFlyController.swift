@@ -21,12 +21,13 @@ enum NetworkError: Error {
     case noDecode
     case noEncode
 }
-/*
+
 class KidsFlyController {
     
-    private let baseUrl = URL(//api they are coming up with)!
-
-  //   func signUp(with user: User, completion: @escaping (Error?) -> ()) {
+    private let baseUrl = URL(string: "https://kidsfly-a96f2.firebaseio.com/")!
+    var bearer: Bearer?
+    
+         func signUp(with user: User, completion: @escaping (Error?) -> ()) {
             let signUpUrl = baseUrl.appendingPathComponent("users/signup")
 
              var request = URLRequest(url: signUpUrl)
@@ -58,7 +59,6 @@ class KidsFlyController {
             completion(nil)
         }.resume()
     }
-            
         func signIn(with user: User, completion: @escaping (Error?) -> ()) {
             let signInUrl = baseUrl.appendingPathComponent("users/login")
 
@@ -105,4 +105,3 @@ class KidsFlyController {
              }.resume()
         }
 }
-*/

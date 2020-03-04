@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="xki-Pf-LV3">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" interfaceStyle="light" id="xDE-wI-PVa" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" interfaceStyle="light" id="xDE-wI-PVa" customClass="LoginViewController" customModule="KidsFly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CZy-vJ-qxV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -373,7 +373,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="xDE-wI-PVa" kind="presentation" modalPresentationStyle="fullScreen" id="CDh-he-HJV"/>
+                        <segue destination="xDE-wI-PVa" kind="presentation" identifier="LoginViewModalSegue" modalPresentationStyle="fullScreen" id="CDh-he-HJV"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WTi-wd-wYh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -501,6 +501,6 @@
         <image name="arrow.left" catalog="system" width="64" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jGP-Wp-1WM"/>
+        <segue reference="CDh-he-HJV"/>
     </inferredMetricsTieBreakers>
 </document>

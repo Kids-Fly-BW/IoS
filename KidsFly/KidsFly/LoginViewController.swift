@@ -12,7 +12,7 @@ enum LoginType {
     case signUp
     case signIn
 }
-/*
+
 class LoginViewController: UIViewController {
 
       var kidsFlyController: KidsFlyController!
@@ -77,4 +77,4 @@ class LoginViewController: UIViewController {
         }
     }
 }
-*/
+
