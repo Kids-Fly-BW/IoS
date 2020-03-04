@@ -17,6 +17,7 @@
 		B57F6EEF240D94B200B370A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F6EEE240D94B200B370A9 /* User.swift */; };
 		B57F6EF1240D967E00B370A9 /* KidsFlyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F6EF0240D967E00B370A9 /* KidsFlyController.swift */; };
 		B57F6EF3240D976E00B370A9 /* Bearer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F6EF2240D976E00B370A9 /* Bearer.swift */; };
+		B57F6EF62410156900B370A9 /* ApplicationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F6EF52410156900B370A9 /* ApplicationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		B57F6EEE240D94B200B370A9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B57F6EF0240D967E00B370A9 /* KidsFlyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsFlyController.swift; sourceTree = "<group>"; };
 		B57F6EF2240D976E00B370A9 /* Bearer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bearer.swift; sourceTree = "<group>"; };
+		B57F6EF52410156900B370A9 /* ApplicationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				B57F6EF4240D977A00B370A9 /* Models */,
 				5544D940240D8596004EC0BE /* AppDelegate.swift */,
 				5544D956240ED3E8004EC0BE /* Main.storyboard */,
+				B57F6EF52410156900B370A9 /* ApplicationViewController.swift */,
 				5544D954240DAACF004EC0BE /* CreateTripViewController.swift */,
 				B57F6EEC240D8BCD00B370A9 /* LoginViewController.swift */,
 				5544D949240D859E004EC0BE /* Assets.xcassets */,
@@ -163,6 +166,7 @@
 				B57F6EF3240D976E00B370A9 /* Bearer.swift in Sources */,
 				B57F6EED240D8BCD00B370A9 /* LoginViewController.swift in Sources */,
 				5544D941240D8596004EC0BE /* AppDelegate.swift in Sources */,
+				B57F6EF62410156900B370A9 /* ApplicationViewController.swift in Sources */,
 				5544D943240D8596004EC0BE /* SceneDelegate.swift in Sources */,
 				5544D955240DAACF004EC0BE /* CreateTripViewController.swift in Sources */,
 			);

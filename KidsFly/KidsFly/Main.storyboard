@@ -10,7 +10,7 @@
         <!--Login View Controller-->
         <scene sceneID="xki-Pf-LV3">
             <objects>
-                <viewController id="xDE-wI-PVa" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="xDE-wI-PVa" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CZy-vJ-qxV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -121,12 +121,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c0u-gS-n8W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3428.985507246377" y="440.625"/>
+            <point key="canvasLocation" x="3493" y="490"/>
         </scene>
-        <!--View Controller-->
+        <!--Application View Controller-->
         <scene sceneID="Qby-UL-mR8">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" interfaceStyle="light" id="opv-IS-W98" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" interfaceStyle="light" id="opv-IS-W98" customClass="ApplicationViewController" customModule="KidsFly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="til-rh-wYc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -266,12 +266,18 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5cx-ls-tm0"/>
                     </view>
-                    <navigationItem key="navigationItem" id="pBR-EE-AnZ"/>
+                    <navigationItem key="navigationItem" id="pBR-EE-AnZ">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrow.left" catalog="system" id="xEd-qy-Iqo">
+                            <connections>
+                                <segue destination="xDE-wI-PVa" kind="presentation" id="jGP-Wp-1WM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kvp-b4-ZhT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4379.7101449275369" y="440.625"/>
+            <point key="canvasLocation" x="4383" y="490"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="0Ag-uK-Igx">
@@ -458,20 +464,11 @@
             </objects>
             <point key="canvasLocation" x="1666.6666666666667" y="9.375"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="1Km-Ab-w99">
-            <objects>
-                <viewController id="FJB-VM-8wI" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="1ZF-bg-Ybu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6dv-MF-Mz2"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x3V-hm-58o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5207" y="441"/>
-        </scene>
     </scenes>
+    <resources>
+        <image name="arrow.left" catalog="system" width="64" height="48"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="jGP-Wp-1WM"/>
+    </inferredMetricsTieBreakers>
 </document>
