@@ -160,6 +160,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="rJ1-bH-2H5">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ApT-WD-qdg">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="05d-Vi-tne" kind="show" id="bRm-pL-6au"/>
                             </connections>
