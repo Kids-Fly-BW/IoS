@@ -35,6 +35,13 @@ class ApplicationViewController: UIViewController {
     */
     
     //MARK: Actions
+    
+    //submit application button tapped
     @IBAction func SATapped(_ sender: Any) {
+        let alertController = UIAlertController(title: "Application Submitted!", message:
+            "Please allow 3-4 days for response.", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+        self.present(alertController, animated: true, completion: nil)
     }
 }
