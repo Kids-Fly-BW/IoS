@@ -1,1 +1,3 @@
-# IoS
+# iOS 
+
+KidsFly iOS app
