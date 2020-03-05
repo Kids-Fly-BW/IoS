@@ -10,7 +10,9 @@ import UIKit
 import CoreData
 
 class TripTableViewController: UITableViewController {
-
+ 
+    let kidsFlyController = KidsFlyController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,12 @@ class TripTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if kidsFlyController.bearer == nil {
+        performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
+        }
     }
 
     // MARK: - Table view data source
@@ -78,14 +86,17 @@ class TripTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
-    }
-    */
-
+        if segue.identifier == "LoginViewModalSegue" {
+            if let destinationVC = segue.destination as? LoginViewController {
+                destinationVC.kidsFlyController = kidsFlyController
+        }
+     }
+   }
 }
