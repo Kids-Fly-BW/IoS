@@ -22,7 +22,7 @@ class TripTableViewController: UITableViewController {
         ]
         let moc = CoreDataStack.shared.mainContext
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: moc, sectionNameKeyPath: "completedStatus", cacheName: nil)
-        frc.delegate = self
+        frc.delegate = self as? NSFetchedResultsControllerDelegate
         try? frc.performFetch()
         return frc
     }()
@@ -69,29 +69,77 @@ class TripTableViewController: UITableViewController {
 
         return cell
     }
-
+/*
 
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-         let trip = fetchedResultsController.object(at: indexPath)
-                    KidsFlyController.deleteTrip(for: trip)
-                    tableView.reloadData()
+            let trip = fetchedResultsController.object(at: indexPath)
+                   KidsFlyController.deleteTrip(for: trip)
+                   tableView.reloadData()
         }    
     }
-    
-
+    */
+   
     // MARK: - Navigation
+      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+          if segue.identifier == "NewTripSegue" {
+              guard let newTripVC = segue.destination as? CreateTripViewController else { return }
+              newTripVC.kidsFlyController = kidsFlyController
+          } else if segue.identifier == "LoginViewModalSegue" {
+              guard let travelerSignInVC = segue.destination as? LoginViewController else { return }
+              travelerSignInVC.kidsFlyController = kidsFlyController
+          } else if segue.identifier == "TripDetailSegue" {
+              guard let tripDetailVC = segue.destination as? CreateTripViewController else { return }
+              tripDetailVC.kidsFlyController = kidsFlyController
+              if let indexPath = tableView.indexPathForSelectedRow {
+                  tripDetailVC.trip = fetchedResultsController.object(at: indexPath)
+              }
+          }
+          
+      }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-        if segue.identifier == "LoginViewModalSegue" {
-            if let destinationVC = segue.destination as? LoginViewController {
-                destinationVC.kidsFlyController = kidsFlyController
+}
+//MARK: Extensions
+
+extension TripTableViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+        switch type {
+        case .insert:
+            tableView.insertSections(IndexSet(integer: sectionIndex), with: .automatic)
+        case .delete:
+            tableView.deleteSections(IndexSet(integer: sectionIndex), with: .automatic)
+        default:
+            break
         }
-     }
-   }
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            guard let newIndexPath = newIndexPath else { return }
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        case .update:
+            guard let indexPath = indexPath else { return }
+            tableView.reloadRows(at: [indexPath], with: .automatic)
+        case .move:
+            guard let oldIndexPath = indexPath else { return }
+            guard let newIndexPath = newIndexPath else { return }
+            tableView.deleteRows(at: [oldIndexPath], with: .automatic)
+            tableView.insertRows(at: [newIndexPath], with: .automatic)
+        case .delete:
+            guard let indexPath = indexPath else { return }
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        default:
+            break
+        }
+    }
 }

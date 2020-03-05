@@ -342,6 +342,7 @@
                                     <outlet property="airportLabel" destination="FWZ-m0-Sqn" id="Lfq-ra-lqe"/>
                                     <outlet property="flightLabel" destination="kCi-WT-zbP" id="dKj-A0-DO7"/>
                                     <outlet property="kidsLabel" destination="Id9-bb-gwc" id="sW8-jH-cQ4"/>
+                                    <segue destination="05d-Vi-tne" kind="show" identifier="TripDetailSegue" id="O22-Cj-3ua"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -354,7 +355,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ApT-WD-qdg">
                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="05d-Vi-tne" kind="show" id="bRm-pL-6au"/>
+                                <segue destination="05d-Vi-tne" kind="show" identifier="NewTripSegue" id="bRm-pL-6au"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -483,4 +484,7 @@
             <point key="canvasLocation" x="1666.6666666666667" y="9.375"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="bRm-pL-6au"/>
+    </inferredMetricsTieBreakers>
 </document>

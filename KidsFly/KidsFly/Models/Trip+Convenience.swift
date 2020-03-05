@@ -50,7 +50,7 @@ extension Trip {
          self.init(identifier: identifier, airport: airport, airline: airline, completedStatus: completedStatus, flightNumber: flightNumber, departureTime: departureTime, childrenQty: Int16(childrenQty), carryOnQty: Int16(carryOnQty), checkedBagQty: Int16(checkedBagQty))
      }
      
-     var tripRepresentation: TripRepresentation {
+     var tripRepresentation: TripRepresentation? {
          return TripRepresentation(identifier: identifier?.uuidString, airport: airport, airline: airline, completedStatus: completedStatus, flightNumber: flightNumber, departureTime: departureTime, childrenQty: Int(childrenQty), carryOnQty: Int(carryOnQty), checkedBagQty: Int(checkedBagQty))
      }
     
