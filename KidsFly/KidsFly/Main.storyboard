@@ -357,6 +357,12 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="airlineLabel" destination="eMl-jI-ikg" id="NbZ-Mb-rgu"/>
+                                    <outlet property="airportLabel" destination="FWZ-m0-Sqn" id="Lfq-ra-lqe"/>
+                                    <outlet property="flightLabel" destination="kCi-WT-zbP" id="dKj-A0-DO7"/>
+                                    <outlet property="kidsLabel" destination="Id9-bb-gwc" id="sW8-jH-cQ4"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

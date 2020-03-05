@@ -10,15 +10,33 @@ import UIKit
 
 class TripTableViewCell: UITableViewCell {
 
+    //MARK: Properties
+    var trip: Trip? {
+        didSet {
+            updateViews()
+        }
+    }
+    //MARK: Outlets
+    @IBOutlet weak var airlineLabel: UILabel!
+    @IBOutlet weak var airportLabel: UILabel!
+    @IBOutlet weak var kidsLabel: UILabel!
+    @IBOutlet weak var flightLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
+    func updateViews() {
+        guard let trip = trip else { return }
+        
+        airlineLabel.text = trip.airline
+        airportLabel.text = trip.airport
+        kidsLabel.text = String(trip.childrenQty)
+        flightLabel.text = trip.flightNumber
+    }
 }
