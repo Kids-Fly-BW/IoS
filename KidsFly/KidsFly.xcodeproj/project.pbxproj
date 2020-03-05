@@ -13,6 +13,7 @@
 		5544D94D240D859E004EC0BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5544D94B240D859E004EC0BE /* LaunchScreen.storyboard */; };
 		5544D955240DAACF004EC0BE /* CreateTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5544D954240DAACF004EC0BE /* CreateTripViewController.swift */; };
 		5544D957240ED3E9004EC0BE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5544D956240ED3E8004EC0BE /* Main.storyboard */; };
+		5544D96C24114EEA004EC0BE /* KidsFly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5544D96A24114EEA004EC0BE /* KidsFly.xcdatamodeld */; };
 		B57F6EED240D8BCD00B370A9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F6EEC240D8BCD00B370A9 /* LoginViewController.swift */; };
 		B57F6EEF240D94B200B370A9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F6EEE240D94B200B370A9 /* User.swift */; };
 		B57F6EF1240D967E00B370A9 /* KidsFlyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57F6EF0240D967E00B370A9 /* KidsFlyController.swift */; };
@@ -29,6 +30,7 @@
 		5544D94E240D859E004EC0BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5544D954240DAACF004EC0BE /* CreateTripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTripViewController.swift; sourceTree = "<group>"; };
 		5544D956240ED3E8004EC0BE /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5544D96B24114EEA004EC0BE /* KidsFly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = KidsFly.xcdatamodel; sourceTree = "<group>"; };
 		B57F6EEC240D8BCD00B370A9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B57F6EEE240D94B200B370A9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B57F6EF0240D967E00B370A9 /* KidsFlyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KidsFlyController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				B57F6EF0240D967E00B370A9 /* KidsFlyController.swift */,
 				B57F6EF2240D976E00B370A9 /* Bearer.swift */,
 				B57F6EEE240D94B200B370A9 /* User.swift */,
+				5544D96A24114EEA004EC0BE /* KidsFly.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -165,6 +168,7 @@
 				B57F6EEF240D94B200B370A9 /* User.swift in Sources */,
 				B57F6EF3240D976E00B370A9 /* Bearer.swift in Sources */,
 				B57F6EED240D8BCD00B370A9 /* LoginViewController.swift in Sources */,
+				5544D96C24114EEA004EC0BE /* KidsFly.xcdatamodeld in Sources */,
 				5544D941240D8596004EC0BE /* AppDelegate.swift in Sources */,
 				B57F6EF62410156900B370A9 /* ApplicationViewController.swift in Sources */,
 				5544D943240D8596004EC0BE /* SceneDelegate.swift in Sources */,
@@ -356,6 +360,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		5544D96A24114EEA004EC0BE /* KidsFly.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				5544D96B24114EEA004EC0BE /* KidsFly.xcdatamodel */,
+			);
+			currentVersion = 5544D96B24114EEA004EC0BE /* KidsFly.xcdatamodel */;
+			path = KidsFly.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 5544D935240D8595004EC0BE /* Project object */;
 }
