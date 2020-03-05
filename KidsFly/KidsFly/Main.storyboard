@@ -311,16 +311,16 @@
             </objects>
             <point key="canvasLocation" x="4383" y="490"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Trip Table View Controller-->
         <scene sceneID="0Ag-uK-Igx">
             <objects>
-                <tableViewController id="p4N-Kd-LLI" sceneMemberID="viewController">
+                <tableViewController id="p4N-Kd-LLI" customClass="TripTableViewController" customModule="KidsFly" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="7th-dI-YBU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="71" id="JMR-Lg-t6g">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="71" id="JMR-Lg-t6g" customClass="TripTableViewCell" customModule="KidsFly" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="71"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JMR-Lg-t6g" id="PJd-ae-xm7">
@@ -501,6 +501,6 @@
         <image name="arrow.left" catalog="system" width="64" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jGP-Wp-1WM"/>
+        <segue reference="CDh-he-HJV"/>
     </inferredMetricsTieBreakers>
 </document>
