@@ -9,7 +9,7 @@
 import Foundation
 
 struct TripRepresentation: Equatable, Codable {
-    var identifier: String?
+    var identifier: UUID?
     var airport: String?
     var airline: String?
     var flight: String?
