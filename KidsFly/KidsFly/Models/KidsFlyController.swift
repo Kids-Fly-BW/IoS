@@ -25,10 +25,11 @@ enum NetworkError: Error {
     case noEncode
 }
 
+
 class KidsFlyController {
     var trips: [TripRepresentation] = []
     
-    private let baseUrl = URL(string: "https://reqres.in/api/")!
+    private let baseUrl = URL(string: "https://lambdagigs.vapor.cloud/api")!
     var bearer: Bearer?
     
          func signUp(with user: User, completion: @escaping (Error?) -> ()) {
