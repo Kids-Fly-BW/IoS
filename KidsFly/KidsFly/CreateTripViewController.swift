@@ -16,7 +16,7 @@ class CreateTripViewController: UIViewController {
     var bearer: Bearer?
     var trip: Trip? {
         didSet {
-            updateViews()
+         // updateViews()
         }
     }
     //MARK: Outlets
@@ -33,25 +33,23 @@ class CreateTripViewController: UIViewController {
     //MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        updateViews()
+       
+        //updateViews()
     }
-    
-
     /*
-    // MARK: - Navigation
+     MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+     In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+         Get the new view controller using segue.destination.
+         Pass the selected object to the new view controller.
     }
     */
  
     //MARK: Actions
     
     @IBAction func saveTripTapped(_ sender: UIButton) {
-        
+
         guard let kidsFlyController = kidsFlyController,
                   let bearer = bearer
                   else { return }
@@ -67,7 +65,7 @@ class CreateTripViewController: UIViewController {
                   !childrenQty.isEmpty,
                   let flightNumber = flightTextField.text,
                   !flightNumber.isEmpty {
-                  
+
                   if let trip = trip {
                       trip.airport = airport
                       trip.airline = airline
@@ -76,7 +74,7 @@ class CreateTripViewController: UIViewController {
                       trip.childrenQty = Int16(childrenQty)!
                       trip.carryOnQty = Int16(carryOnQty)!
                       trip .checkedBagQty = Int16(checkedBagQty)!
-                      
+
                       let alertController = UIAlertController(title: "Trip Updated", message: "Your trip was successfully changed.", preferredStyle: .alert)
                       let alertAction = UIAlertAction(title: "OK", style: .default) { (_) in
                           self.dismiss(animated: true, completion: nil)
@@ -84,13 +82,13 @@ class CreateTripViewController: UIViewController {
                       }
                       alertController.addAction(alertAction)
                       self.present(alertController, animated: true)
-                  
+
                   } else {
                       let newTrip = Trip(airport: airport, airline: airline, flightNumber: flightNumber, departureTime: datePicker.date, childrenQty: Int16(childrenQty)!, carryOnQty: Int16(carryOnQty)!, checkedBagQty: Int16(checkedBagQty)!)
-                      
+
 
                       kidsFlyController.sendTripsToServer(trip: newTrip) { error in
-                          if error != .success(true) {
+                          if let error = error {
                               print("Error occurred while PUTin a new trip to server: \(error)")
                           } else {
                               DispatchQueue.main.async {
@@ -104,16 +102,15 @@ class CreateTripViewController: UIViewController {
                               }
                           }
                       }
-                      
+
                   }
-                  
+
               }
     }
-
     // MARK: - Update Views
     private func updateViews() {
         guard isViewLoaded else { return }
-        
+
         if let trip = trip {
             title = trip.flightNumber
             airlineTextField.text = trip.airline
@@ -125,11 +122,8 @@ class CreateTripViewController: UIViewController {
             datePicker.date = trip.departureTime!
         } else {
         title = "Create New Trip"
-            markAsCompletedButton.isEnabled = false
-            markAsCompletedButton.setTitleColor(UIColor.systemGray, for: .disabled)
+//            markAsCompletedButton.isEnabled = false
+//            markAsCompletedButton.setTitleColor(UIColor.systemGray, for: .disabled)
         }
     }
-
-
-
 }

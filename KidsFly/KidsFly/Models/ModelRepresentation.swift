@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct TripRepresentation: Equatable, Codable {
     var identifier: String?

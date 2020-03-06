@@ -26,10 +26,10 @@ enum NetworkError: Error {
 }
 
 class KidsFlyController {
-    
-    let baseUrl = URL(string: "https://kidsfly-a96f2.firebaseio.com/")!
-    var bearer: Bearer?
     var trips: [TripRepresentation] = []
+    
+    private let baseUrl = URL(string: "https://reqres.in/api/")!
+    var bearer: Bearer?
     
          func signUp(with user: User, completion: @escaping (Error?) -> ()) {
             let signUpUrl = baseUrl.appendingPathComponent("users/signup")
@@ -110,39 +110,53 @@ class KidsFlyController {
         }
     
      //MARK: Fetch
-     func fetchTripsFromServer(completion: @escaping (Error?) -> Void) {
+    func fetchTripsFromServer(completion: @escaping (Result<[TripRepresentation], NetworkError>) -> Void) {
+             guard let bearer = bearer else {
+             completion(.failure(.noAuth))
+                 return
+             }
+             let allTripsUrl = baseUrl.appendingPathComponent("trips")
+             print(allTripsUrl)
              
-             let requestURL = baseUrl.appendingPathExtension("json")
-             
-    
-             let request = URLRequest(url: requestURL)
+             var request = URLRequest(url: allTripsUrl)
+             request.httpMethod = HTTPMethod.get.rawValue
+             request.setValue("Bearer \(bearer.token)", forHTTPHeaderField: "Authorization")
 
-             URLSession.shared.dataTask(with: request) { data, _, error in
-                 if let error = error {
-                     print("Error fetching tasks: \(error)")
-                     completion(nil)
+                 URLSession.shared.dataTask(with: request) { (data, response, error) in
+                     if let response = response as? HTTPURLResponse,
+                         response.statusCode == 401 {
+                         completion(.failure(.badAuth))
+                         print("no response")
                      return
                  }
-                 
-                 guard let data = data else {
-                     print("No data returned from data task.")
-                     completion(nil)
+                   if let error = error {
+                         completion(.failure(.otherError))
+                     print(error)
                      return
                  }
-                 
+                     guard let data = data else {
+                         completion(.failure(.badData))
+                         print("no data")
+                     return
+                 }
+                     print("No errors")
+
                  let jsonDecoder = JSONDecoder()
-                 do {
-                     let decoded = try jsonDecoder.decode([String: TripRepresentation].self, from: data).map { $0.value }
-                    try self.updateTrips(with: decoded)
-                     completion(nil)
+                     jsonDecoder.dateDecodingStrategy = .iso8601
+                     do {
+                 let trips = try jsonDecoder.decode([TripRepresentation].self, from: data)
+                     completion(.success(trips))
+                     self.trips = trips
                  } catch {
-                     print("Unable to decode data into object of type [TripRepresentation]: \(error)")
-                     completion(nil)
-                 }
-             }.resume()
-         }
+                     print("Error decoding gigs: \(error.localizedDescription)")
+                     completion(.failure(.noDecode))
+                         return
+             }
+          }.resume()
+     }
+     
     // MARK: Send
-    func sendTripsToServer(trip: Trip, completion: @escaping () -> Void = { }) {
+    func sendTripsToServer(trip: Trip, completion: @escaping (Error?) -> Void = { _ in }) {
           
           let identifier = trip.identifier ?? UUID()
           trip.identifier = identifier
@@ -156,7 +170,7 @@ class KidsFlyController {
           
           guard let tripRepresentation = trip.tripRepresentation else {
               print("Trip Representation is nil")
-              completion()
+              completion(NSError())
               return
           }
           
@@ -165,7 +179,7 @@ class KidsFlyController {
               request.httpBody = try JSONEncoder().encode(tripRepresentation)
           } catch {
               print("Error encoding trip representation: \(error)")
-              completion()
+              completion(NSError())
               return
           }
           
@@ -173,11 +187,11 @@ class KidsFlyController {
               
               if let error = error {
                   print("Error PUTting data: \(error)")
-                  completion()
+                  completion(NSError())
                   return
               }
               
-              completion()
+              completion(nil)
           }.resume()
       }
     //MARK: - Delete

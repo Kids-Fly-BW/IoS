@@ -12,7 +12,7 @@ import CoreData
 class TripTableViewController: UITableViewController {
  
     //MARK: Properties
-    
+    var trip: Trip?
     let kidsFlyController = KidsFlyController()
     private lazy var fetchedResultsController: NSFetchedResultsController<Trip> = {
         let fetchRequest: NSFetchRequest<Trip> = Trip.fetchRequest()
@@ -32,13 +32,17 @@ class TripTableViewController: UITableViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if kidsFlyController.bearer == nil {
         performSegue(withIdentifier: "LoginViewModalSegue", sender: self)
         }
-        tableView.reloadData()
-    }
+        kidsFlyController.fetchTripsFromServer { (result) in
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
 
     // MARK: - Table view data source
 
@@ -69,35 +73,26 @@ class TripTableViewController: UITableViewController {
 
         return cell
     }
-/*
 
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            let trip = fetchedResultsController.object(at: indexPath)
-                   KidsFlyController.deleteTrip(for: trip)
-                   tableView.reloadData()
-        }    
-    }
-    */
-   
     // MARK: - Navigation
-      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          if segue.identifier == "NewTripSegue" {
-              guard let newTripVC = segue.destination as? CreateTripViewController else { return }
-              newTripVC.kidsFlyController = kidsFlyController
-          } else if segue.identifier == "LoginViewModalSegue" {
-              guard let travelerSignInVC = segue.destination as? LoginViewController else { return }
-              travelerSignInVC.kidsFlyController = kidsFlyController
-          } else if segue.identifier == "TripDetailSegue" {
-              guard let tripDetailVC = segue.destination as? CreateTripViewController else { return }
-              tripDetailVC.kidsFlyController = kidsFlyController
-              if let indexPath = tableView.indexPathForSelectedRow {
-                  tripDetailVC.trip = fetchedResultsController.object(at: indexPath)
-              }
-          }
-          
-      }
+        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            if segue.identifier == "LoginViewModalSegue" {
+                if let destinationVC = segue.destination as? LoginViewController {
+                    destinationVC.kidsFlyController = kidsFlyController
+                }
+            } else if segue.identifier == "NewTripSegue" {
+                if let destinationVC = segue.destination as? CreateTripViewController {
+                    destinationVC.kidsFlyController = kidsFlyController
+                    if let indexPath = tableView.indexPathForSelectedRow {
+                        destinationVC.trip = fetchedResultsController.object(at: indexPath)
+                    }
+                }
+            } else if segue.identifier == "TripDetailSegue" {
+                if let destinationVC = segue.destination as? CreateTripViewController {
+            destinationVC.kidsFlyController = kidsFlyController
+            }
+        }
+    }
 
 }
 //MARK: Extensions
